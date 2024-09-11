@@ -2,6 +2,14 @@ a {
   cursor: pointer;
   text-decoration: none;
 }
+a:hover {
+  transform: scale(1.2);
+  transition: 0.8s;
+}
+li:hover {
+  transform: scale(1.05);
+  transition: 0.8s;
+}
 ul,
 button {
   list-style: none;
@@ -61,7 +69,7 @@ button {
   src: url("fonts/poppins/Poppins-Bold.ttf austen-Bold.otf") format("woff2");
 }
 section.wrapper {
-  width: 1450px;
+  width: 1240px;
   margin: 0;
   display: flex;
   justify-content: center;
@@ -82,7 +90,7 @@ header {
   align-items: center;
 }
 section.container {
-  width: 1240px;
+  width: 100%;
   height: 45px;
   display: flex;
   justify-content: space-between;
@@ -91,6 +99,9 @@ section.container {
 section.container h1 {
   width: 90px;
   height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 section.container h1 a {
   width: 100%;
@@ -100,14 +111,65 @@ section.container h1 a img {
   width: 100%;
   display: block;
 }
+section.menu {
+  display: none;
+  font-family: causten-medium;
+}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  overflow-x: hidden;
+  transition: 1s;
+  padding-top: 60px;
+  padding-left: 0;
+}
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 500;
+  color: #807d7e;
+  display: block;
+  transition: 0.5s;
+}
+.sidenav a:hover {
+  color: #3c4242;
+  font-weight: 700;
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  margin-left: 50px;
+}
+.sidenav .closebtn img:hover {
+  transform: rotate(90deg);
+  transition: 1s;
+}
+.sidenav .closebtn img,
+.openbtn img {
+  width: 25px;
+  height: 25px;
+}
+#openbtn {
+  transition: 1s;
+}
+#openbtn:hover {
+  cursor: pointer;
+  transform: scale(1.5);
+  transition: 1s;
+}
+
 section.container ul.category {
   display: flex;
   justify-content: space-between;
   width: 480px;
   height: 26px;
-}
-section.container ul.category li {
-  margin-left: 40px;
+  padding: 0;
 }
 section.container ul.category li a {
   color: #807d7e;
@@ -121,16 +183,28 @@ section.container ul.category li a:hover {
 section.container div.search {
   background: #f6f6f6;
   border-radius: 8px;
-  margin-left: 200px;
   width: 270px;
 }
 section.container div.search span {
+  height: 44px;
   display: flex;
   justify-content: space-between;
-  padding: 12px 20px;
+  padding: 0px 20px;
+  align-items: center;
 }
 section.container div.search span div.left {
-  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+}
+section.container div.search span div.left img {
+  width: 15px;
+  height: 15px;
+}
+section.container div.search span div.right {
+  height: 20px;
 }
 section.container div.search span div.right input {
   font-size: 16px;
@@ -143,30 +217,36 @@ section.container ul.login {
   width: 160px;
   display: flex;
   justify-content: space-between;
+  padding: 0;
 }
 section.container ul.login li {
-  margin-left: 12px;
+  width: 44px;
+  height: 44px;
   background: #f6f6f6;
   border-radius: 8px;
-  padding: 10px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 section.container ul.login li a {
-  display: inline;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 20px;
   height: 20px;
 }
 section.container ul.login li a img {
-  width: 100%;
+  width: 15px;
+  height: 15px;
 }
 section.home {
   width: 100%;
   height: 720px;
   display: flex;
   justify-content: center;
+  align-items: center;
   font-family: core-sans-medium;
-}
-.home .wrapper {
   background-image: url("src/banner.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -199,13 +279,18 @@ div.arrows img.right {
   transform: rotate(270deg);
 }
 div.bannertext {
-  width: 1100px;
+  width: 440px;
   height: 455px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 100px;
 }
 div.bannertext h4 {
   font-size: 32px;
   color: #fff;
   font-weight: 500;
+  margin: 0;
 }
 div.bannertext h1 {
   font-size: 78px;
@@ -218,6 +303,7 @@ div.bannertext h5 {
   font-size: 32px;
   color: #fff;
   font-weight: 500;
+  margin: 0;
 }
 div.bannertext button {
   width: 250px;
@@ -238,19 +324,21 @@ section.deals {
   font-family: core-sans-regular;
 }
 div.deals {
-  width: 1240px;
+  width: 100%;
   height: 360px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 div.deals div.coziness {
-  width: 600px;
-  height: 355px;
+  width: 605px;
+  height: 356px;
   background-image: url("src/coziness.jpg");
   background-size: cover;
   display: flex;
   align-items: center;
+  border-radius: 12px;
+  box-shadow: 2px 2px 10px 0px #00000066;
 }
 div.deals div.coziness div.unsplash {
   margin-left: 30px;
@@ -273,12 +361,14 @@ div.deals div.coziness h3 {
   color: #fff;
 }
 div.deals div.summer {
-  width: 600px;
-  height: 355px;
+  width: 605px;
+  height: 356px;
   background-image: url("src/summer.jpg");
   background-size: cover;
   display: flex;
   align-items: center;
+  border-radius: 12px;
+  box-shadow: 2px 2px 10px 0px #00000066;
 }
 div.deals div.summer div.unsplash {
   margin-left: 30px;
@@ -301,11 +391,15 @@ div.deals div.summer h3 {
   color: #fff;
 }
 div.deals h6#underline {
-  text-decoration: underline;
+  width: 122px;
+  border-bottom: 2px solid #fff;
   cursor: pointer;
   font-family: core-sans-bold;
 }
-
+div.deals h6#underline:hover {
+  transform: scale(1.1);
+  transition: 0.8s;
+}
 section#newarrival {
   width: 100%;
   height: 500px;
@@ -313,7 +407,7 @@ section#newarrival {
   justify-content: center;
 }
 div.newarrival {
-  width: 1240px;
+  width: 100%;
   height: 415px;
 }
 div.text {
@@ -346,7 +440,7 @@ div.newarrival div.items {
   align-items: center;
 }
 div.newarrival div.arrow {
-  width: 1240px;
+  width: 100%;
   height: 320px;
   display: flex;
   justify-content: center;
@@ -366,6 +460,7 @@ div.newarrival div.items div.item div.img:hover {
   height: 270px;
   border-radius: 12px;
   box-shadow: 1px 2px 5px #000000;
+  transition: 0.5s;
 }
 
 div.newarrival div.items div.item div.img img {
@@ -387,7 +482,7 @@ section.everyday {
   justify-content: center;
 }
 div.everyday {
-  width: 1240px;
+  width: 100%;
   height: 640px;
   display: flex;
 }
@@ -440,12 +535,12 @@ section#formen {
   margin-top: 100px;
 }
 section#formen div.formen {
-  width: 1240px;
+  width: 100%;
   height: 1055px;
 }
 section#formen div.formen div.category {
   margin-top: 100px;
-  width: 1240px;
+  width: 100%;
   height: 952px;
 }
 section#formen div.formen ul {
@@ -461,9 +556,10 @@ section#formen div.formen ul li {
 section#formen div.formen ul li img.men:hover {
   box-shadow: 1px 2px 5px #000000;
   border-radius: 10px;
+  transition: 0.5s;
 }
 section#formen div.formen ul li img.men {
-  width: 270px;
+  width: 100%;
   height: 394px;
 }
 section#formen div.formen ul li div.frame10 {
@@ -476,6 +572,7 @@ section#formen div.formen ul li div.frame10 {
 section#formen div.formen ul li div.frame10:hover {
   box-shadow: 0.5px 0.5px 10px #999999;
   border-radius: 10px;
+  transition: 0.5s;
 }
 section#formen div.formen ul li div.frame10 h6 {
   margin: 0px;
@@ -492,6 +589,12 @@ section#formen div.formen ul li div.frame10 h3 {
 section#formen div.formen ul li div.right {
   width: 17px;
   border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section#formen div.formen ul li div.right img {
+  width: 100%;
 }
 section#forwomen {
   width: 100%;
@@ -502,7 +605,7 @@ section#forwomen {
   margin-bottom: 50px;
 }
 section#forwomen div.forwomen {
-  width: 1240px;
+  width: 100%;
   height: 555px;
 }
 section#forwomen div.forwomen ul {
@@ -516,9 +619,13 @@ section#forwomen div.forwomen ul li {
   height: 452px;
   cursor: pointer;
 }
+section#forwomen div.forwomen ul li img {
+  width: 100%;
+}
 section#forwomen div.forwomen ul li img.wmen:hover {
   box-shadow: 1px 2px 5px #000000;
   border-radius: 10px;
+  transition: 0.5s;
 }
 section#forwomen div.forwomen ul li img.men {
   width: 270px;
@@ -534,6 +641,7 @@ section#forwomen div.forwomen ul li div.frame10 {
 section#forwomen div.forwomen ul li div.frame10:hover {
   box-shadow: 0.5px 0.5px 10px #999999;
   border-radius: 10px;
+  transition: 0.5s;
 }
 section#forwomen div.forwomen ul li div.frame10 h6 {
   margin: 0px;
@@ -560,7 +668,7 @@ section.brands {
   margin-top: 100px;
 }
 div.brands {
-  width: 1240px;
+  width: 100%;
   height: 360px;
   display: flex;
   flex-direction: column;
@@ -605,6 +713,7 @@ div.brands ul li {
 }
 div.brands ul li:hover {
   box-shadow: 0.5px 0.5px 10px #999999;
+  transition: 0.5s;
 }
 div.brands ul li:nth-child(1) div {
   width: 150px;
@@ -637,11 +746,11 @@ section.limelight {
   justify-content: center;
 }
 div.limelight {
-  width: 1240px;
+  width: 100%;
   height: 545px;
 }
 div.limelight ul {
-  width: 1240px;
+  width: 100%;
   height: 445px;
   display: flex;
   justify-content: space-between;
@@ -654,13 +763,14 @@ div.limelight ul li {
   border-radius: 12px;
 }
 div.limelight ul li img.light {
-  width: 282px;
+  width: 100%;
   height: 370px;
   border-radius: 12px;
   cursor: pointer;
 }
 div.limelight ul li img.light:hover {
   box-shadow: 1px 2px 5px #000000;
+  transition: 0.5s;
 }
 
 div.limelight ul li div.frame98 {
@@ -707,6 +817,7 @@ div.limelight ul li div span.button {
 }
 span.button:hover {
   box-shadow: 0.5px 0.5px 10px #999999;
+  transition: 0.5s;
 }
 div.limelight ul li div div.heart {
   width: 33px;
@@ -722,22 +833,39 @@ div.limelight ul li div div.heart {
   cursor: pointer;
 }
 div.limelight ul li div div.heart:hover {
-  background: rgb(230, 53, 53);
   box-shadow: 0.5px 0.5px 10px #999999;
 }
-div.limelight ul li div div.heart img {
+div.limelight ul li div div.heart:hover .hover_hart {
+  opacity: 1;
+  transform: scale(1.2);
+  transition: 0.5s;
+}
+div.limelight ul li div div.heart img.hart {
+  position: relative;
   width: 14px;
   height: 13px;
+}
+div.limelight ul li div div.heart img.hover_hart {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  opacity: 0;
+}
+section.feedback {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .feedback-section {
   background-color: #ffffff;
-  width: 1240px;
+  width: 100%;
   height: 500px;
   margin-bottom: 100px;
 }
 div.feedbacktest {
-  width: 1240px;
+  width: 100%;
   height: 330px;
   margin-top: 50px;
   display: flex;
@@ -840,10 +968,13 @@ div.frame123 div.footer-column:nth-child(3) {
 }
 div.frame123 div.footer-column:nth-child(4) {
   width: 395px;
-  height: 180px;
+  height: 205px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+div.frame123 div.footer-column:nth-child(4) p {
+  margin: 0;
 }
 div.frame123 div.footer-column:nth-child(4) a {
   color: #f6f6f6;
@@ -871,6 +1002,12 @@ div.footer-column span {
   font-weight: 700;
   color: #f6f6f6;
   font-family: "causten-bold";
+  cursor: pointer;
+}
+div.footer-column span:hover {
+  font-size: 29.1px;
+  transition: 0.8s;
+  text-shadow: 0.5px 0.5px 10px #999999;
 }
 div.footer-column p.support {
   margin-top: 40px;
@@ -904,6 +1041,18 @@ div.icon div.social-icons a {
   background: #f6f6f6;
   border-radius: 11px;
 }
+div.icon div.social-icons a:hover {
+  box-shadow: 0.5px 0.5px 10px #999999;
+}
+div.icon div.social-icons a:hover .hover_icon {
+  opacity: 1;
+  transition: 0.5s;
+  width: 20px;
+  height: 20px;
+}
+div.icon div.social-icons a img {
+  position: relative;
+}
 div.icon div.social-icons a:nth-child(1) img {
   width: 10px;
   height: 18px;
@@ -919,6 +1068,10 @@ div.icon div.social-icons a:nth-child(3) img {
 div.icon div.social-icons a:nth-child(4) img {
   width: 17px;
   height: 20px;
+}
+div.icon div.social-icons a img.hover_icon {
+  opacity: 0;
+  position: absolute;
 }
 div.app {
   width: 330px;
@@ -948,6 +1101,7 @@ div.app ul li {
 }
 div.app ul li:hover {
   background: #636363;
+  transition: 0.5s;
 }
 div.app ul li div.left {
   width: 30px;
@@ -977,6 +1131,7 @@ div.popular {
 }
 div.popular:hover {
   background: #636363;
+  transition: 0.5s;
 }
 div.popular span.popular {
   width: 242px;
@@ -999,4 +1154,9 @@ div.popular div img {
 div.bottom {
   font-size: 18px;
   font-weight: 700;
+}
+@media screen and (max-width: 796px) {
+  section.menu {
+    display: block;
+  }
 }
