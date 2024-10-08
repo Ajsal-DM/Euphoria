@@ -1155,8 +1155,157 @@ div.bottom {
   font-size: 18px;
   font-weight: 700;
 }
+@media screen and (max-width: 1200px) {
+  section.wrapper {
+    width: 1150px;
+  }
+  section.container {
+    width: 95%;
+  }
+  section.container ul.category {
+    width: 410px;
+  }
+  section.home {
+    background-image: url(src/banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -35px;
+  }
+
+  div.deals div.coziness {
+    width: 550px;
+    height: 300px;
+    background-image: url(src/coziness.jpg);
+  }
+  div.deals div.summer {
+    width: 550px;
+    height: 300px;
+    background-image: url(src/summer.jpg);
+    background-size: cover;
+  }
+  div.text {
+    margin-left: 20px;
+  }
+
+  div.everyday .frame {
+    height: 595px;
+  }
+}
+@media screen and (max-width: 980px) {
+  section.wrapper {
+    width: 950px;
+  }
+  section.container ul.category {
+    width: 350px;
+  }
+  section.container ul.category li a {
+    font-size: 18px;
+  }
+  section.container div.search {
+    width: 150px;
+  }
+  section.container div.search span {
+    padding: 0px 5px;
+  }
+  section.container div.search span div.right input {
+    width: 125px;
+  }
+  div.arrows {
+    width: 35px;
+    height: 35px;
+  }
+  div.bannertext h1 {
+    font-size: 60px;
+  }
+  div.bannertext h4 {
+    font-size: 25px;
+  }
+  div.bannertext h5 {
+    width: 25px;
+  }
+  div.bannertext button {
+    width: 200px;
+    font-size: 18px;
+    padding: 16px 60px;
+  }
+  div.deals div.coziness {
+    width: 450px;
+    height: 250px;
+  }
+  div.deals div.summer {
+    width: 450px;
+    height: 250px;
+  }
+  div.deals div.coziness h6,
+  div.deals div.summer h6 {
+    font-size: 15px;
+  }
+  div.deals div.coziness h2,
+  div.deals div.summer h2 {
+    font-size: 30px;
+  }
+  div.deals div.coziness h3,
+  div.deals div.summer h3 {
+    font-size: 14px;
+  }
+  div.deals h6#underline {
+    width: 101px;
+  }
+  div.newarrival div.items {
+    width: 930px;
+  }
+  div.newarrival div.items div.item {
+    width: 225px;
+  }
+  div.newarrival div.items div.item div.img {
+    width: 225px;
+    height: 225px;
+  }
+  div.everyday .frame {
+    height: 490px;
+  }
+  div.everyday .frame div.headline h1 {
+    font-size: 25px;
+  }
+  div.everyday .frame div.headline h4 {
+    font-size: 15px;
+  }
+  div.everyday .frame div.headline button {
+    width: 150px;
+  }
+  section#formen {
+    height: 1000px;
+  }
+  section#forwomen {
+    margin: 0;
+    height: 470px;
+  }
+  section#formen div.formen div.category,
+  section#forwomen div.forwomen ul {
+    margin-top: 50px;
+  }
+  section#formen div.formen ul li,
+  section#forwomen div.forwomen ul li {
+    width: 225px;
+    height: 400px;
+  }
+  section#formen div.formen ul li img.men,
+  section#forwomen div.forwomen ul li img.men {
+    width: 100%;
+    height: 325px;
+  }
+  section#formen div.formen ul li div.frame10,
+  section#forwomen div.forwomen ul li div.frame10 {
+    width: 220px;
+  }
+}
 @media screen and (max-width: 796px) {
   section.menu {
     display: block;
+  }
+  section.container ul.category,
+  section.container div.search,
+  section.container ul.login {
+    display: none;
   }
 }
