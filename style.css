@@ -124,16 +124,20 @@ section.menu {
   right: 0;
   overflow-x: hidden;
   transition: 1s;
-  padding-top: 60px;
+  padding-top: 70px;
   padding-left: 0;
+  background-color: #807d7e;
+  opacity: 0.8;
+  margin-top: 0;
 }
 .sidenav a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 22px;
   font-weight: 500;
-  color: #807d7e;
+  color: #000;
   display: block;
+  font-weight: 700;
   transition: 0.5s;
 }
 .sidenav a:hover {
@@ -142,9 +146,8 @@ section.menu {
 }
 .sidenav .closebtn {
   position: absolute;
-  top: 0;
-  right: 25px;
-  margin-left: 50px;
+  top: 30px;
+  right: 30px;
 }
 .sidenav .closebtn img:hover {
   transform: rotate(90deg);
@@ -496,18 +499,22 @@ div.everyday .frame {
   align-items: center;
 }
 div.everyday .frame div.headline {
-  width: 466px;
-  height: 282px;
+  width: 400px;
+  height: 300px;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 div.everyday .frame div.headline h1 {
-  margin-top: 0;
+  margin: 0;
   font-size: 34px;
   font-weight: 800;
   font-family: core-sans-bold;
 }
 div.everyday .frame div.headline h4 {
   font-size: 20px;
+  margin: 0;
   font-weight: 300;
   font-family: causten-regular;
 }
@@ -819,7 +826,7 @@ span.button:hover {
   box-shadow: 0.5px 0.5px 10px #999999;
   transition: 0.5s;
 }
-div.limelight ul li div div.heart {
+div.limelight ul li div.heart {
   width: 33px;
   height: 33px;
   background: #fff;
@@ -827,25 +834,25 @@ div.limelight ul li div div.heart {
   justify-content: center;
   align-items: center;
   position: relative;
-  left: 63px;
-  bottom: 370px;
+  left: 235px;
+  bottom: 410px;
   border-radius: 35px;
   cursor: pointer;
 }
-div.limelight ul li div div.heart:hover {
+div.limelight ul li d div.heart:hover {
   box-shadow: 0.5px 0.5px 10px #999999;
 }
-div.limelight ul li div div.heart:hover .hover_hart {
+div.limelight ul li div.heart:hover .hover_hart {
   opacity: 1;
   transform: scale(1.2);
   transition: 0.5s;
 }
-div.limelight ul li div div.heart img.hart {
+div.limelight ul li div.heart img.hart {
   position: relative;
   width: 14px;
   height: 13px;
 }
-div.limelight ul li div div.heart img.hover_hart {
+div.limelight ul li div.heart img.hover_hart {
   position: absolute;
   width: 15px;
   height: 15px;
@@ -880,6 +887,7 @@ div.feedbacktest {
   border: 1.8px solid #bebcbd;
   border-radius: 10px;
   width: 400px;
+  height: 330px;
 }
 div.feedback-card div.profile {
   width: 350px;
@@ -930,6 +938,36 @@ div.feedback-card div.profile ul.stars img {
   width: 351px;
   height: 126px;
   font-family: "causten-regular";
+}
+
+.dot {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 footer {
@@ -1261,8 +1299,18 @@ div.bottom {
     width: 225px;
     height: 225px;
   }
+  section.everyday {
+    height: 500px;
+  }
+  div.everyday {
+    height: 500px;
+  }
   div.everyday .frame {
     height: 490px;
+  }
+  div.everyday .frame div.headline {
+    width: 350px;
+    height: 220px;
   }
   div.everyday .frame div.headline h1 {
     font-size: 25px;
@@ -1298,14 +1346,239 @@ div.bottom {
   section#forwomen div.forwomen ul li div.frame10 {
     width: 220px;
   }
+  div.brands ul {
+    width: 850px;
+    padding: 0;
+  }
+  div.brands ul li {
+    width: 150px;
+    height: 80px;
+  }
+  div.limelight ul li {
+    width: 225px;
+    height: 400px;
+  }
+  div.limelight ul li img.light {
+    height: 330px;
+  }
+  div.limelight ul li div.frame98 {
+    width: 225px;
+  }
+  div.limelight ul li div.heart {
+    position: relative;
+    left: 180px;
+    bottom: 375px;
+  }
+  div.feedbacktest {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  div.footer {
+    width: 900px;
+  }
+  div.frame123,
+  div.icon,
+  div.popular {
+    width: 100%;
+  }
+  div.frame123 span {
+    font-size: 25px;
+  }
+  div.frame123 a {
+    font-size: 15px;
+  }
+  div.app span.download {
+    font-size: 25px;
+  }
+  span.popular {
+    font-size: 25px;
+  }
+  div.bottom {
+    font-size: 15px;
+  }
 }
 @media screen and (max-width: 796px) {
   section.menu {
     display: block;
   }
+  section.wrapper {
+    width: 750px;
+  }
   section.container ul.category,
   section.container div.search,
   section.container ul.login {
     display: none;
+  }
+  section.home {
+    background-image: url(src/banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -35px;
+    background-position-x: -200px;
+  }
+  div.bannertext {
+    margin-left: 30px;
+    height: 350px;
+  }
+  div.bannertext h1 {
+    font-size: 45px;
+  }
+  div.bannertext h4 {
+    font-size: 20px;
+  }
+  div.bannertext h5 {
+    font-size: 25px;
+  }
+  div.bannertext button {
+    width: 175px;
+    font-size: 15px;
+    padding: 16px 50px;
+  }
+  section.deals {
+    height: 600px;
+    margin-top: 40px;
+  }
+  div.deals {
+    height: 530px;
+    display: flex;
+    flex-direction: column;
+  }
+  section#newarrival {
+    height: 400px;
+  }
+  div.newarrival div.items {
+    width: 100%;
+  }
+  div.newarrival div.items div.item {
+    width: 190px;
+  }
+  div.newarrival div.items div.item div.img {
+    width: 160px;
+    height: 160px;
+  }
+  div.newarrival div.items div.item div.img:hover {
+    width: 170px;
+    height: 170px;
+  }
+  div.newarrival div.items div.item h6 {
+    font-size: 15px;
+  }
+  div.newarrival div.items,
+  div.newarrival div.arrow {
+    height: 240px;
+  }
+  div.newarrival div.items div.item {
+    height: 200px;
+  }
+  section.everyday {
+    height: 400px;
+  }
+  div.everyday .frame {
+    width: 500px;
+    height: 383px;
+  }
+  div.everyday div.rectangle {
+    width: 500px;
+  }
+  div.everyday .frame div.headline h1 {
+    font-size: 20px;
+  }
+  div.everyday .frame div.headline h4 {
+    font-size: 12px;
+  }
+  div.everyday .frame div.headline button {
+    width: 125px;
+    height: 40px;
+    padding: 12px 31px;
+  }
+  div.everyday .frame div.headline {
+    width: 265px;
+    height: 180px;
+  }
+  section#formen {
+    height: 770px;
+  }
+  section#forwomen {
+    margin: 0;
+    height: 390px;
+  }
+  section#formen div.formen ul li img.men,
+  section#forwomen div.forwomen ul li img.men,
+  div.limelight ul li img.light {
+    width: 100%;
+    height: 250px;
+  }
+  section#formen div.formen ul li,
+  section#forwomen div.forwomen ul li,
+  div.limelight ul li {
+    width: 170px;
+    height: 300px;
+  }
+  section#formen div.formen ul li div.frame10,
+  section#forwomen div.forwomen ul li div.frame10 {
+    width: 160px;
+  }
+  div.brands ul {
+    width: 90%;
+  }
+  div.brands ul li {
+    width: 100px;
+    height: 60px;
+    padding: 10px;
+  }
+  section.limelight {
+    height: 430px;
+  }
+  div.limelight ul li div.frame98 {
+    width: 170px;
+  }
+  div.limelight ul li div.heart {
+    position: relative;
+    left: 125px;
+    bottom: 300px;
+  }
+  div.limelight ul li div span.bottomframe {
+    font-size: 11px;
+  }
+  div.limelight ul li div span.topframe {
+    font-size: 12px;
+    width: 115px;
+  }
+  div.limelight ul li div span.button {
+    width: 55px;
+    height: 30px;
+    font-size: 11px;
+  }
+  .feedback-section {
+    margin-bottom: 0;
+  }
+  div.footer {
+    width: 100%;
+  }
+  div.frame123 span {
+    font-size: 20px;
+  }
+  div.footer-column ul li a {
+    font-size: 14px;
+  }
+  div.frame123 a {
+    font-size: 14px;
+  }
+  div.app span.download {
+    font-size: 20px;
+  }
+  div.app ul {
+    margin-top: 35px;
+  }
+
+  div.app ul li div.right span.device {
+    font-size: 15px;
+  }
+  div.popular span.popular {
+    font-size: 25px;
+  }
+  div.bottom {
+    font-size: 11px;
   }
 }
