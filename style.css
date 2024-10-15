@@ -1245,6 +1245,12 @@ div.bottom {
   div.everyday .frame {
     height: 595px;
   }
+  .feedback-card {
+    width: 370px;
+  }
+  div.popular {
+    width: 100%;
+  }
 }
 @media screen and (max-width: 980px) {
   section.wrapper {
