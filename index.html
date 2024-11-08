@@ -68,12 +68,17 @@
         <section class="homepage">
           
           <div class="bannertext">
-            <h4>T-Shirt / Tops</h4>
+           <div>
+            <h4>T<span>-</span>Shirt <span>/</span> Tops</h4>
             <h1>Summer <br> Value Pack</h1>
-            <h5>cool/colorful/comfy</h5>
+            <h5>cool<span>/</span>colorful<span>/</span>comfy</h5>
             <button>Shop Now</button>
+           </div>
           </div>
-          
+          <div class="slider">
+            <div class="fill"></div>
+            <div class="not_filled"></div>
+          </div>
         </section>
       </section>
       <div class="arrows">
@@ -87,7 +92,7 @@
             <div class="unsplash">
               <h6>Low Price</h6>
             <h2>High coziness</h2>
-            <h3>UPTO 50% OFF</h3>
+            <h3>UPTO 50<span>%</span> OFF</h3>
             <h6 id="underline">Explore Items</h6>
             </div>
           </div>
@@ -95,7 +100,7 @@
             <div class="unsplash">
               <h6>Beyoung Presents</h6>
             <h2>Breezy Summer</h2>
-            <h3>UPTO 50% OFF</h3>
+            <h3>UPTO 50<span>%</span> OFF</h3>
             <h6 id="underline">Explore Items</h6>
             </div>
           </div>
@@ -110,6 +115,9 @@
             <h6>New Arrivals</h6>
             </div>
             <div class="arrow">
+              <div class="newarrivalarrow">
+                <img src="src/newarrival_arrow-left.svg" alt="">
+              </div>
              <div class="items">
               <div class="item">
                 <div class="img">
@@ -137,6 +145,9 @@
                 </div>
                 <h6>Urban Shirts</h6>
           </div>
+             </div>
+             <div class="newarrivalarrow">
+              <img src="src/newarrival_arrow-right.svg" alt="">
              </div>
         </div>
       </section>
@@ -622,9 +633,9 @@
     </footer>
     <script>
       function openNav() {
-        document.getElementById("mySidenav").style.width = "200px";
+        document.getElementById("mySidenav").style.width = "25% ";
         document.getElementById("openbtn").style.width = "0";
-        document.getElementById("overlay").style.width = "75%";
+        document.getElementById("overlay").style.width = "76%";
       }
 
       function closeNav() {
@@ -632,52 +643,47 @@
         document.getElementById("openbtn").style.width = "25px";
         document.getElementById("overlay").style.width = "0";
       }
-      
-      let slideIndex = 1;
+      let slideIndex = 0;
+      function currentSlide(){
+        if (screen.width <= 980){
+          showSlides();
+        }
+      }
 
-function currentSlide(n) {
-  if (screen.width <= 980) {
-    showSlides((slideIndex = n));
-  }
-}
+      function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("myslides");
+        let dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 2000);
+      }
 
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("myslides");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {
-    slideIndex = 1;
-  }
-  if (n < 1) {
-    slideIndex = slides.length;
-  }
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
-}
+      function responsive(viewport) {
+        if (viewport.matches) {
+          showSlides();
+        } else {
+          let slides = document.getElementsByClassName("myslides");
+          for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "block";
+          }
+        }
+      }
 
-function responsive(viewport) {
-  if (viewport.matches) {
-    showSlides();
-  } else {
-    let slides = document.getElementsByClassName("myslides");
-    for (let i = 0; i < slides.length; i++) {
-      slides[i].style.display = "block";
-    }
-  }
-}
-
-var viewport = window.matchMedia("(max-width: 980px)");
-responsive(viewport);
-viewport.addEventListener("change", function () {
-  responsive(viewport);
-});
-     
+      var viewport = window.matchMedia("(max-width: 980px)");
+      responsive(viewport);
+      viewport.addEventListener("change", function () {
+        responsive(viewport);
+      });
+        
     
 
      

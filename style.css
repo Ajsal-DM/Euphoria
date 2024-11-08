@@ -57,16 +57,15 @@ button {
 
 @font-face {
   font-family: "poppins-regular";
-  src: url("fonts/poppins/Poppins-Regular.ttf austen-Regular.otf")
-    format("woff2");
+  src: url("fonts/poppins/Poppins-Regular.ttf") format("woff2");
 }
 @font-face {
   font-family: "poppins-medium";
-  src: url("fonts/poppins/Poppins-Medium.ttf austen-Medium.otf") format("woff2");
+  src: url("fonts/poppins/Poppins-Medium.ttf") format("woff2");
 }
 @font-face {
   font-family: "poppins-bold";
-  src: url("fonts/poppins/Poppins-Bold.ttf austen-Bold.otf") format("woff2");
+  src: url("fonts/poppins/Poppins-Bold.ttf") format("woff2");
 }
 section.wrapper {
   width: 1240px;
@@ -218,6 +217,7 @@ section.container div.search span div.left {
   align-items: center;
   width: 20px;
   height: 20px;
+  cursor: pointer;
 }
 section.container div.search span div.left img {
   width: 15px;
@@ -231,7 +231,7 @@ section.container div.search span div.right input {
   color: #807d7e;
   border: none;
   background: #f6f6f6;
-  font-family: causten;
+  font-family: causten-regular;
 }
 section.container ul.login {
   width: 160px;
@@ -276,8 +276,8 @@ section.homepage {
   width: 100%;
   height: 716px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
 }
 div.arrows {
   width: 45px;
@@ -300,11 +300,42 @@ div.arrows img.right {
 }
 div.bannertext {
   width: 440px;
+  height: 700px;
+  margin-left: 100px;
+  display: flex;
+  align-items: center;
+}
+div.bannertext div {
+  width: 440px;
   height: 455px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-left: 100px;
+}
+div.slider {
+  display: block;
+  width: 100%;
+  height: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+div.slider div.fill {
+  width: 60px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 20px 0px 0px 20px;
+}
+div.slider div.not_filled {
+  width: 60px;
+  height: 10px;
+  background-color: #fff;
+  opacity: 50%;
+  border-radius: 0px 20px 20px 0px;
+}
+div.bannertext span {
+  font-family: none;
 }
 div.bannertext h4 {
   font-size: 32px;
@@ -365,7 +396,7 @@ div.deals div.coziness div.unsplash {
 }
 div.deals div.coziness h6 {
   font-weight: 800;
-  font-size: 18px;
+  font-size: 20px;
   color: #fff;
   font-family: montserrat-bold;
 }
@@ -379,6 +410,9 @@ div.deals div.coziness h3 {
   font-weight: 500;
   font-size: 16px;
   color: #fff;
+}
+div.deals div.coziness h3 span {
+  font-family: none;
 }
 div.deals div.summer {
   width: 605px;
@@ -395,7 +429,7 @@ div.deals div.summer div.unsplash {
 }
 div.deals div.summer h6 {
   font-weight: 800;
-  font-size: 18px;
+  font-size: 20px;
   color: #fff;
   font-family: montserrat-bold;
 }
@@ -409,6 +443,9 @@ div.deals div.summer h3 {
   font-weight: 500;
   font-size: 16px;
   color: #fff;
+}
+div.deals div.summer h3 span {
+  font-family: none;
 }
 div.deals h6#underline {
   width: 122px;
@@ -428,7 +465,7 @@ section#newarrival {
 }
 div.newarrival {
   width: 100%;
-  height: 415px;
+  height: 500px;
 }
 div.text {
   width: 420px;
@@ -452,7 +489,6 @@ div.text p {
   margin: 0;
 }
 div.newarrival div.items {
-  margin-top: 102px;
   width: 1170px;
   height: 320px;
   display: flex;
@@ -461,10 +497,24 @@ div.newarrival div.items {
 }
 div.newarrival div.arrow {
   width: 100%;
-  height: 320px;
+  height: 415px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 75px;
+}
+div.newarrivalarrow {
+  width: 15px;
+  height: 12px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+div.newarrivalarrow img {
+  width: 100%;
+  display: block;
 }
 div.newarrival div.items div.item {
   width: 263px;
@@ -500,6 +550,7 @@ section.everyday {
   height: 650px;
   display: flex;
   justify-content: center;
+  margin-top: 75px;
 }
 div.everyday {
   width: 100%;
@@ -602,11 +653,11 @@ section#formen div.formen ul li div.frame10 h6 {
   margin: 0px;
   font-size: 14px;
   font-weight: 500;
-  font-family: causten-medium;
+  font-family: causten-regular;
 }
 section#formen div.formen ul li div.frame10 h3 {
   margin: 0;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   font-family: causten-bold;
 }
@@ -676,9 +727,9 @@ section#forwomen div.forwomen ul li div.frame10 h6 {
 }
 section#forwomen div.forwomen ul li div.frame10 h3 {
   margin: 0;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
-  font-family: poppins-medium;
+  font-family: poppins-regular;
 }
 section#forwomen div.forwomen ul li div.right {
   width: 17px;
@@ -768,6 +819,7 @@ section.limelight {
   height: 545px;
   display: flex;
   justify-content: center;
+  margin-top: 100px;
 }
 div.limelight {
   width: 100%;
@@ -880,6 +932,7 @@ section.feedback {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 100px;
 }
 
 .feedback-section {
@@ -1034,6 +1087,7 @@ div.frame123 div.footer-column:nth-child(4) p {
 div.frame123 div.footer-column:nth-child(4) a {
   color: #f6f6f6;
   text-decoration: none;
+  font-family: causten-medium;
 }
 div.footer-column ul {
   padding: 0;
@@ -1068,7 +1122,7 @@ div.footer-column p.support {
   margin-top: 40px;
 }
 div.footer-column ul li a {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 500;
   color: #f6f6f6;
   text-decoration: none;
@@ -1171,7 +1225,7 @@ div.app ul li div.right span.avail {
   font-family: "causten-regular";
 }
 div.app ul li div.right span.device {
-  font-size: 18px;
+  font-size: 20px;
   font-family: "causten-medium";
 }
 div.popular {
@@ -1207,7 +1261,7 @@ div.popular div img {
   display: block;
 }
 div.bottom {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
 }
 @media screen and (max-width: 1200px) {
@@ -1252,6 +1306,207 @@ div.bottom {
     width: 100%;
   }
 }
+@media screen and (max-width: 1100px) {
+  section.wrapper {
+    width: 1050px;
+  }
+  section.container ul.category {
+    width: 400px;
+  }
+  section.container ul.category li a {
+    font-size: 20px;
+  }
+  section.container div.search {
+    width: 200px;
+  }
+
+  section.container div.search span div.right input {
+    width: 125px;
+  }
+  section.home,
+  section.homepage {
+    height: 700px;
+  }
+  div.arrows {
+    width: 35px;
+    height: 35px;
+  }
+  div.bannertext h1 {
+    font-size: 60px;
+  }
+  div.bannertext h4 {
+    font-size: 25px;
+  }
+  div.bannertext h5 {
+    width: 25px;
+  }
+  div.bannertext button {
+    width: 210px;
+    font-size: 20px;
+    padding: 16px 60px;
+  }
+  div.deals div.coziness {
+    width: 475px;
+    height: 275px;
+  }
+  div.deals div.summer {
+    width: 475px;
+    height: 275px;
+  }
+  section.deals {
+    height: 450px;
+  }
+  div.deals {
+    width: 95%;
+  }
+  div.deals div.coziness h6,
+  div.deals div.summer h6 {
+    font-size: 15px;
+  }
+  div.deals div.coziness h2,
+  div.deals div.summer h2 {
+    font-size: 30px;
+  }
+  div.deals div.coziness h3,
+  div.deals div.summer h3 {
+    font-size: 14px;
+  }
+  div.deals h6#underline {
+    width: 101px;
+  }
+  div.newarrival div.items {
+    width: 930px;
+  }
+  div.newarrival div.items div.item {
+    width: 225px;
+  }
+  div.newarrival div.items div.item div.img {
+    width: 225px;
+    height: 225px;
+  }
+  div.newarrival div.items div.item div.img:hover {
+    width: 230px;
+    height: 230px;
+    border-radius: 12px;
+    box-shadow: 1px 2px 5px #000000;
+    transition: 0.5s;
+  }
+  section.everyday {
+    height: 500px;
+  }
+  div.everyday {
+    height: 500px;
+  }
+  div.everyday .frame {
+    height: 542px;
+  }
+  div.everyday .frame div.headline {
+    width: 350px;
+    height: 220px;
+  }
+  div.everyday .frame div.headline h1 {
+    font-size: 25px;
+  }
+  div.everyday .frame div.headline h4 {
+    font-size: 15px;
+  }
+  div.everyday .frame div.headline button {
+    width: 151px;
+  }
+  section#formen {
+    height: 1000px;
+  }
+  section#forwomen {
+    margin: 0;
+    height: 470px;
+  }
+  section#formen div.formen div.category,
+  section#forwomen div.forwomen ul {
+    margin-top: 50px;
+  }
+  section#formen div.formen ul li,
+  section#forwomen div.forwomen ul li {
+    width: 225px;
+    height: 400px;
+  }
+  section#formen div.formen ul li img.men,
+  section#forwomen div.forwomen ul li img.men {
+    width: 100%;
+    height: 325px;
+  }
+  section#formen div.formen ul li div.frame10,
+  section#forwomen div.forwomen ul li div.frame10 {
+    width: 220px;
+  }
+  section#forwomen div.forwomen ul li div.frame10 h3 {
+    font-size: 17px;
+  }
+  div.brands ul {
+    width: 850px;
+    padding: 0;
+  }
+  div.brands ul li {
+    width: 150px;
+    height: 80px;
+  }
+  section.limelight {
+    height: 500px;
+  }
+  div.limelight ul li {
+    width: 225px;
+    height: 400px;
+  }
+  div.limelight ul li img.light {
+    height: 330px;
+  }
+  div.limelight ul li div.frame98 {
+    width: 225px;
+  }
+  div.limelight ul li div.heart {
+    position: relative;
+    left: 180px;
+    bottom: 375px;
+  }
+  div.feedbacktest {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .feedback-card {
+    width: 330px;
+  }
+  div.feedback-card div.profile,
+  .feedback-card span,
+  .feedback-card p {
+    width: 320px;
+  }
+  .feedback-card p {
+    font-size: 12px;
+  }
+  div.footer {
+    width: 900px;
+  }
+  div.frame123,
+  div.icon,
+  div.popular {
+    width: 100%;
+  }
+  div.frame123 span {
+    font-size: 25px;
+  }
+  div.frame123 a {
+    font-size: 15px;
+  }
+  div.app span.download {
+    font-size: 25px;
+  }
+  span.popular {
+    font-size: 25px;
+  }
+  div.bottom {
+    font-size: 15px;
+  }
+}
 @media screen and (max-width: 980px) {
   section.wrapper {
     width: 950px;
@@ -1260,7 +1515,7 @@ div.bottom {
     width: 350px;
   }
   section.container ul.category li a {
-    font-size: 18px;
+    font-size: 20px;
   }
   section.container div.search {
     width: 150px;
@@ -1289,6 +1544,9 @@ div.bottom {
     font-size: 18px;
     padding: 16px 60px;
   }
+  div.deals {
+    width: 100%;
+  }
   div.deals div.coziness {
     width: 450px;
     height: 250px;
@@ -1312,15 +1570,31 @@ div.bottom {
   div.deals h6#underline {
     width: 101px;
   }
+  section#newarrival,
+  div.newarrival {
+    height: 400px;
+  }
   div.newarrival div.items {
-    width: 930px;
+    width: 875px;
+    height: 330px;
+  }
+  div.newarrival div.arrow {
+    height: 330px;
   }
   div.newarrival div.items div.item {
     width: 225px;
+    height: 250px;
   }
   div.newarrival div.items div.item div.img {
-    width: 225px;
-    height: 225px;
+    width: 200px;
+    height: 200px;
+  }
+  div.newarrival div.items div.item div.img:hover {
+    width: 215px;
+    height: 215px;
+    border-radius: 12px;
+    box-shadow: 1px 2px 5px #000000;
+    transition: 0.5s;
   }
   section.everyday {
     height: 500px;
@@ -1342,7 +1616,7 @@ div.bottom {
     font-size: 15px;
   }
   div.everyday .frame div.headline button {
-    width: 150px;
+    width: 151px;
   }
   section#formen {
     height: 1000px;
@@ -1421,7 +1695,7 @@ div.bottom {
     font-size: 15px;
   }
 }
-@media screen and (max-width: 796px) {
+@media screen and (max-width: 768px) {
   section.menu {
     display: block;
   }
@@ -1492,6 +1766,7 @@ div.bottom {
     height: 240px;
   }
   div.newarrival div.items div.item {
+    width: 165px;
     height: 200px;
   }
   section.everyday {
@@ -1541,6 +1816,14 @@ div.bottom {
   section#formen div.formen ul li div.frame10,
   section#forwomen div.forwomen ul li div.frame10 {
     width: 160px;
+  }
+  section#formen div.formen ul li div.frame10 h3,
+  section#forwomen div.forwomen ul li div.frame10 h3 {
+    font-size: 12px;
+  }
+  section#formen div.formen ul li div.frame10 h6,
+  section#forwomen div.forwomen ul li div.frame10 h6 {
+    font-size: 9px;
   }
   div.brands ul {
     width: 90%;
@@ -1604,4 +1887,300 @@ div.bottom {
   div.bottom {
     font-size: 11px;
   }
+}
+@media screen and (max-width: 640px) {
+  section.wrapper {
+    width: 600px;
+  }
+  section.home {
+    width: 640px;
+    height: 555px;
+  }
+  section.homepage {
+    height: 520px;
+  }
+  div.bannertext div {
+    height: 290px;
+  }
+  div.bannertext {
+    height: 460px;
+  }
+  div.bannertext button {
+    width: 140px;
+    font-size: 15px;
+    padding: 10px 30px;
+  }
+  div.slider div.fill,
+  div.slider div.not_filled {
+    width: 50px;
+    height: 7px;
+  }
+  div.newarrival div.items div.item div.img {
+    width: 140px;
+    height: 140px;
+  }
+  div.newarrival div.items div.item {
+    width: 165px;
+    height: 180px;
+  }
+  div.newarrivalarrow {
+    display: none;
+  }
+  div.everyday .frame {
+    width: 500px;
+    height: 307px;
+  }
+  div.everyday,
+  section.everyday {
+    height: 307px;
+  }
+  section#formen {
+    height: 675px;
+  }
+  section#formen div.formen ul li,
+  section#forwomen div.forwomen ul li,
+  div.limelight ul li {
+    width: 140px;
+    height: 250px;
+  }
+  section#formen div.formen ul li img.men,
+  section#forwomen div.forwomen ul li img.men,
+  div.limelight ul li img.light {
+    width: 100%;
+    height: 200px;
+  }
+  section#formen div.formen ul li div.frame10,
+  section#forwomen div.forwomen ul li div.frame10 {
+    width: 130px;
+  }
+  section#forwomen {
+    margin: 0;
+    height: 350px;
+  }
+  div.brands ul li {
+    width: 80px;
+    height: 50px;
+    padding: 10px;
+  }
+  div.brands ul li div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  div.brands,
+  section.brands {
+    width: 100%;
+    height: 300px;
+  }
+  div.limelight ul li div.heart {
+    position: relative;
+    left: 100px;
+    bottom: 270px;
+  }
+  section.limelight {
+    height: 350px;
+  }
+  div.limelight ul li div.frame98 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    width: 140px;
+  }
+  div.limelight ul li div.frame51,
+  div.limelight ul li div span.topframe,
+  div.limelight ul li div span.bottomframe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+  }
+  div.footer-column ul li a {
+    font-size: 12px;
+  }
+  div.frame123 span {
+    font-size: 18px;
+  }
+  div.frame123 span:hover {
+    font-size: 20px;
+  }
+  div.frame123 a {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 480px) {
+  section.wrapper {
+    width: 450px;
+  }
+  section.home {
+    width: 490px;
+    height: 500px;
+  }
+  div.bannertext {
+    height: 350px;
+  }
+  div.arrows {
+    display: none;
+  }
+  section#newarrival {
+    height: 470px;
+  }
+  div.newarrival div.items {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  div.newarrival div.items {
+    width: 75%;
+  }
+  div.newarrival div.items div.item {
+    width: 140px;
+  }
+  div.newarrival div.items div.item div.img:hover {
+    width: 145px;
+    height: 145px;
+  }
+  div.everyday .frame {
+    width: 225px;
+    height: 230px;
+  }
+  div.everyday,
+  section.everyday {
+    height: 230px;
+  }
+  div.everyday .frame div.headline h1 {
+    font-size: 15px;
+  }
+  div.everyday .frame div.headline h4 {
+    font-size: 9px;
+  }
+  div.everyday .frame div.headline button {
+    width: 120px;
+    height: 37px;
+    padding: 12px 25px;
+  }
+  section#formen div.formen ul,
+  section#forwomen div.forwomen ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  section#formen div.formen div.category,
+  section#forwomen div.forwomen ul,
+  div.limelight ul {
+    margin: auto;
+    width: 75%;
+    margin-top: 50px;
+  }
+  section#formen {
+    height: 1150px;
+  }
+  section#forwomen {
+    margin: 0;
+    height: 600px;
+  }
+  div.brands ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  div.brands,
+  section.brands {
+    height: 400px;
+  }
+  div.brands ul {
+    width: 80%;
+    height: 175px;
+  }
+  div.limelight ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  section.limelight {
+    height: 610px;
+  }
+  div.limelight ul {
+    height: 610px;
+  }
+  div.frame123 {
+    display: flex;
+    flex-wrap: wrap;
+    height: 520px;
+  }
+  div.footer {
+    height: 820px;
+  }
+  footer.footer {
+    height: 900px;
+  }
+  div.footer-column ul.contact,
+  div.footer-column ul.about,
+  div.footer-column ul.terms {
+    height: 150px;
+  }
+  div.frame123 div.footer-column:nth-child(n) {
+    height: 150px;
+  }
+  div.icon div.social-icons a {
+    width: 30px;
+    height: 30px;
+  }
+  div.app ul li {
+    width: 130px;
+  }
+  div.app ul {
+    width: 265px;
+  }
+  div.icon div.social-icons {
+    width: 150px;
+  }
+  div.app {
+    width: 255px;
+  }
+}
+@media screen and (max-width: 360px) {
+  section.wrapper {
+    width: 350px;
+  }
+  section.homepage {
+    height: 450px;
+  }
+  div.deals div.coziness {
+    width: 350px;
+    height: 200px;
+  }
+  div.deals div.summer {
+    width: 350px;
+    height: 200px;
+  }
+  div.deals {
+    height: 425px;
+  }
+  section.deals {
+    height: 500px;
+  }
+  div.newarrival div.items,
+  section#formen div.formen div.category,
+  section#forwomen div.forwomen ul,
+  div.limelight ul {
+    width: 90%;
+  }
+  div.text h6 {
+    font-size: 25px;
+  }
+  div.everyday {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  div.everyday .frame,
+  div.everyday div.rectangle {
+    width: 300px;
+    height: 300px;
+  }
+  div.everyday,
+  section.everyday {
+    height: 610px;
+  }
+}
+@media screen and (max-width: 320px) {
 }
